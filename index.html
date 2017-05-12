@@ -6,15 +6,15 @@
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
-  <form action="/action_page.php">
-  What's my name? <input type="text" name="fname"><br> you can write it as many times as you want
+  <form>
+  What's my name? <input type="text"><br> you can write it as many times as you want
 </form>
 <script>
 const pressed = [];
 const secretCode = 'grant';
 window.addEventListener('keyup', (e) => {
   console.log(e.key);
-  pressed.push(e.key);
+  pressed.push(e.key.toLowerCase);
   pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
   if (pressed.join('').includes(secretCode)){
     cornify_add();
