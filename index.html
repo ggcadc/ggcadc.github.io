@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Testing All the Things!</title>
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+  <script type="text/javascript" src="isMobile/isMobile.js"></script>
 </head>
 <body>
 
@@ -36,27 +37,6 @@
   </style>
 
 <script>
-//mobile detection
-  function isMobile() {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
-};
   
 const pressed = [];
 const secretCode = 'grant';
@@ -77,9 +57,11 @@ const walk = 100;
   function shadow(e){
     const { offsetHeight : height, offsetWidth: width } = hero;
     let { offsetX: x, offsetY: y } = e;
-    if(isMobile.any()){
-      var x = e.accelerationIncludingGravity.x;
-      var y = e.accelerationIncludingGravity.y;
+    if(isMobile()){
+      let x = e.acceleration.x;
+      let y = e.acceleration.y;
+    }else{
+      let { offsetX: x, offsetY: y } = e;
     }
     if(this !== e.target){//fix for mouse over other element
       x = x + e.target.offsetLeft;
