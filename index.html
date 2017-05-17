@@ -55,6 +55,10 @@ const walk = 100;
   function shadow(e){
     const { offsetHeight : height, offsetWidth: width } = hero;
     let { offsetX: x, offsetY: y } = e;
+    if(isMobile.any()){
+      var x = e.accelerationIncludingGravity.x;
+      var y = e.accelerationIncludingGravity.y;
+    }
     if(this !== e.target){//fix for mouse over other element
       x = x + e.target.offsetLeft;
       y = y + e.target.offsetTop;
