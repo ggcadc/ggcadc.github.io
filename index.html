@@ -57,7 +57,7 @@ const walk = 100;
   function shadow(e){
     const { offsetHeight : height, offsetWidth: width } = hero;
     let { offsetX: x, offsetY: y } = e;
-    if(isMobile()){
+    if(isMobile){
       let x = e.acceleration.x;
       let y = e.acceleration.y;
     }else{
