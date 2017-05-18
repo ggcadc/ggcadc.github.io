@@ -71,14 +71,16 @@ const walk = 100;
 
   }
   
+  var randomDistance = Math.round(Math.random * 100) + 50;
+  
   window.ondevicemotion = (e) => {
       // console.log(e);
       const {
         offsetHeight: height,
         offsetWidth: width
       } = hero;
-      var x = (e.accelerationIncludingGravity.x) * 100;
-      var y = (e.accelerationIncludingGravity.y) * 100;
+      var x = (e.accelerationIncludingGravity.x) * randomDistance;
+      var y = (e.accelerationIncludingGravity.y) * randomDistance;
 
       const xWalk = Math.round((x / width * walk) - (walk / 2));
       const yWalk = Math.round((y / width * walk) - (walk / 2));
