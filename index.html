@@ -5,6 +5,8 @@
   <title>Testing All the Things!</title>
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
   <script type="text/javascript" src="isMobile.js"></script>
+  <a href="1.html">next test</a>
+  <div align="center"><a href="2.html">another test test</a></div>
 </head>
 <body>
 
@@ -17,11 +19,9 @@
     color:black;
     font-family: sans-serif;
   }
-
   body {
     margin: 0;
   }
-
   .hero {
     min-height: 100vh;
     display:flex;
@@ -29,69 +29,227 @@
     align-items: center;
     color:black;
   }
-
   h1 {
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
   }
   </style>
 
-<script>
-  
+<script type="text/javascript">
+//From git.io
+
 const pressed = [];
 const secretCode = 'grant';
 window.addEventListener('keyup', (e) => {
-  console.log(e.key);
-  pressed.push(e.key.toLowerCase());
-  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
-  if (pressed.join('').includes(secretCode)){
-    cornify_add();
-  }
-  console.log(pressed)
+console.log(e.key);
+pressed.push(e.key.toLowerCase());
+pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+if (pressed.join('').includes(secretCode)){
+	cornify_add();
+}
+console.log(pressed)
 })
-
 const hero = document.querySelector('.hero');
 const text = hero.querySelector('h1');
 const walk = 100;
+function shadow(e){
+	const { offsetHeight : height, offsetWidth: width } = hero;
+	let { offsetX: x, offsetY: y } = e;
+	if(this !== e.target){//fix for mouse over other element
+		x = x + e.target.offsetLeft;
+		y = y + e.target.offsetTop;
+	}
+	const xWalk = Math.round((x / width * walk) - (walk /2));
+	const yWalk = Math.round((y / width * walk) - (walk /2));
+	text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, 0.7),
+													 ${xWalk * -1}px ${yWalk}px 0 rgba(0, 255, 255, 0.7)`;
+}
 
-  function shadow(e){
-    const { offsetHeight : height, offsetWidth: width } = hero;
-    let { offsetX: x, offsetY: y } = e;
+const randomDistance = (Math.round(Math.random() * 100) + 50);
 
-    if(this !== e.target){//fix for mouse over other element
-      x = x + e.target.offsetLeft;
-      y = y + e.target.offsetTop;
-    }
-
-    const xWalk = Math.round((x / width * walk) - (walk /2));
-    const yWalk = Math.round((y / width * walk) - (walk /2));
-
-    text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, 0.7),
-                             ${xWalk * -1}px ${yWalk}px 0 rgba(0, 255, 255, 0.7)`;
-
-  }
-  
-  const randomDistance = (Math.round(Math.random() * 100) + 50);
-  
-  window.ondevicemotion = (e) => {
-      // console.log(e);
-      const {
-        offsetHeight: height,
-        offsetWidth: width
-      } = hero;
-      var x = (e.accelerationIncludingGravity.x) * randomDistance;
-      var y = (e.accelerationIncludingGravity.y) * randomDistance;
-
-      const xWalk = Math.round((x / width * walk) - (walk / 2));
-      const yWalk = Math.round((y / width * walk) - (walk / 2));
-
-      text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, 0.7),
-                             ${xWalk * -1}px ${yWalk}px 0 rgba(0, 255, 255, 0.7)`;
-    }
-
-
+window.ondevicemotion = (e) => {
+		// console.log(e);
+		const {
+			offsetHeight: height,
+			offsetWidth: width
+		} = hero;
+		var x = (e.accelerationIncludingGravity.x) * randomDistance;
+		var y = (e.accelerationIncludingGravity.y) * randomDistance;
+		const xWalk = Math.round((x / width * walk) - (walk / 2));
+		const yWalk = Math.round((y / width * walk) - (walk / 2));
+		text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, 0.7),
+													 ${xWalk * -1}px ${yWalk}px 0 rgba(0, 255, 255, 0.7)`;
+	}
 hero.addEventListener('mousemove', shadow);
 
+//end gitio script
+
+
+// let countDownFrom = (num) => {
+// 	if (num == 0) return;
+// 	console.log(num);
+// 	countDownFrom(num - 1)
+//
+// }
+// countDownFrom(10)
+
+var animals = [
+	{name: 'fluffy', species: 'rabbit'},
+	{name: 'goddy', species:'dog'},
+	{name: 'larayne', species: 'cat'},
+	{name: 'tamara', species:'cat'},
+	{name: 'will', species:'dog'},
+	{name: 'john', species: 'rabbit'},
+	{name: 'drumph', species: 'rabbit'},
+	{name: 'mane', species:'dog'},
+	{name: 'matt', species: 'cat'},
+	{name: 'andrew', species:'cat'},
+	{name: 'kyla', species:'dog'},
+	{name: 'nate', species: 'rabbit'}
+]
+
+//using filter function
+/*
+var isDog = function(animal){
+	return animal.species === 'dog'
+}
+var isNotDog = function(animal){
+	return animal.species !== 'dog'
+}
+var dogs = animals.filter(isDog)
+var notDogs = animals.filter(isNotDog)
+
+console.log(dogs)
+console.table(notDogs)
+*/
+
+// var rebbits = animals.filter(function(animal) {
+// 	return animal.species === 'rabbit';
+// })
+
+//Using for loop vs map function
+// var names = []
+// for (var i = 0; i < animals.length; i++){
+// 	names.push(animals[i].name);
+// }
+// console.log(names);
+
+// var names = animals.map(function(animals){
+// 	return animals.name + ' is a ' + animals.species
+// })
+// console.log(names);
+
+//es6
+// var names =animals.map((x) => x.name);
+// console.log(names);
+
+var orders = [
+	{ amount : 250 },
+	{ amount : 400 },
+	{ amount : 100 },
+	{ amount : 325 },
+	{ amount : 200 }
+]
+
+// var totalAmount = orders.reduce((sum, order) => sum + order.amount, 0)
+
+// var totalAmount = orders.reduce(function(sum, order) {
+// 	console.log('hello', sum, order)//how this works
+// 	return sum + order.amount
+// }, 0)
+
+// var totalAmount = 0
+// for (var i = 0; i < orders.length; i++){
+// 	totalAmount += orders[i].amount
+// }
+
+// console.log(totalAmount)
+
+//scope and closure
+// var me = 'Grant';
+// function sayHi(){
+// 	console.log('hello ' +me+ '!');
+// }
+// me = 'other'
+// sayHi()
+
+//currying
+//this is non currying
+// let dragon = (name, size, element) =>
+	// name + ' is a ' +
+	// size + ' dragon that breathes ' +
+	// element + '!'
+//console.log(dragon('fluffy', 'tiny', 'water'))
+
+// this is currying es6
+// let dragon =
+// 	name =>
+// 		size =>
+// 			element =>
+// 				name + ' is a ' +
+// 				size + ' dragon that breathes ' +
+// 				element + '!'
+// console.log(dragon('fluffy')('tiny')('water'))
+
+//converted to js5 through babel
+// var dragon = function dragon(name) {
+// 	return function (size) {
+// 		return function (element) {
+// 			return name + ' is a ' + size + ' dragon that breathes ' + element + '!';
+// 		};
+// 	};
+// };
+// console.log(dragon('fluffy')('tiny')('water'));
+
+//EloquentJS exercise
+// function range(a, b){
+// 	var numbers = [];
+// 	if(a < b){
+// 		for(var i = a; i <= b; i++)
+// 		numbers.push(i);
+// 	}else{
+// 		for(var i = b; i <= a; i++)
+// 		numbers.push(i);
+// 		numbers.reverse();
+// 		};
+// 	return(numbers);
+// 	}
+
+// function range(a, b, c){
+// 	var numbers = [];
+// 	if (typeof c === 'undefined'){c = 1}
+// 		if(a < b){
+// 			for(var i = a; i <= b; i += c)
+// 			numbers.push(i);
+// 		}else{
+// 			for(var i = b; i <= a; i += c)
+// 			numbers.push(i);
+// 			numbers.reverse();
+// 	};
+// 		return(numbers);
+// }
+
+// function reverseArray(array){
+//   	newArray = []
+// 	for(i = array.length - 1; i >= 0; i--){
+//       newArray.push(array.pop())
+//     }
+//   return newArray
+// }
+// function reverseArrayInPlace (array) {
+//   var i = 0;
+//       n = array.length;
+//       middle = Math.floor(n / 2);
+//       temp = null;
+//
+//   for (; i < middle; i += 1) {
+//      temp = array[i];
+//      array[i] = array[n - 1 - i];
+//      array[n - 1 - i] = temp;
+//   }
+// }
+
+
+
+
 </script>
-</body>
-</html>
