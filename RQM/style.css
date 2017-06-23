@@ -1,0 +1,56 @@
+/* CSS for Random Quotes Generator */
+
+ body {
+   background-color: #cdd1c4
+ }
+
+ button {
+    background-color: #4595e0;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 4px;
+    width:  80px;
+   height: 30px;
+}
+button:hover {
+    background-color: #3f87dd;
+}
+
+.box {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: 'Proza Libre', sans-serif;
+}
+
+.box1 {
+  background: #3f3f3f;
+  border-radius: 20px 20px 0px 0px
+}
+.box2 {
+  background: #76acc1;
+  justify-content: space-around;
+  font-size: 4vh;
+  flex-grow:1;
+}
+.box3 {
+  font-size: 16px;
+  background: #3f3f3f;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.container {
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  width: 70vw;
+  float: left;
+  left: 15%;
+  position: relative;
+  transition: all .2s;
+}
