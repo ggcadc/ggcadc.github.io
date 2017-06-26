@@ -1,0 +1,82 @@
+/* Style sheet for weather app */
+* {
+  margin: 0;
+  padding:0;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  overflow: hidden;
+  background-color: #698bcf
+}
+#title {
+  color: #464353;
+  font-size: 100px;
+  top: 10%;
+  text-align: center;
+  position: fixed;
+  display: block;
+}
+#apparentTemperature {
+  display: block;
+}
+#apparentTemperatureC {
+  display: none;
+}
+
+.box1 {
+}
+.box2 {
+}
+.box3 {
+}
+.box4 {
+}
+.box5 {
+}
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  font-size: 2vh;
+
+
+}
+.box {
+  font-size: 200%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.3);
+  color: rgba(255, 255, 255, 0.75);
+  text-rendering: geometricPrecision;
+  max-width: 300px;
+}
+
+
+.boxw {
+  text-align: left;
+  font-size: 200%;
+  top: 30%;
+  left: 25%;
+  position: fixed;
+  width: 550px;
+}
+.boxl {
+  text-align: left;
+  font-size: 50%;
+  top: 75%;
+  left: 10%;
+  position: fixed;
+}
+
+/*dark skies icons*/
+figure {
+}
+
+canvas {
+  display: block;
+  float: left;
+}

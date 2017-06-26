@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Local Weather</title>
+  </head>
+
+  <body class="container">
+    <div id="title">
+      <p id="topTitle">Local Weather</p>
+    </div>
+    <div class="box box1">
+      <p id="apparentTemperature"></p>
+      <p id="apparentTemperatureC"></p>
+    </div>
+    <div class="box box2">
+      <p id="summary"></p>
+    </div>
+    <div class="box box3">
+      <p id="windSpeed"></p>
+    </div>
+
+    <div class="box box4">
+      <p id="icon">
+        <figure>
+          <canvas id="clear-day" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="clear-night" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="partly-cloudy-day" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="partly-cloudy-night" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="cloudy" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="rain" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="sleet" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="snow" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="wind" style="display:none" width="128" height="128">
+          </canvas>
+
+          <canvas id="fog" style="display:none" width="128" height="128">
+          </canvas>
+        </figure>
+      </p>
+    </div>
+
+
+    <div class="boxl">
+      <p id="boxLoc">
+        <p id="long">longitude...</p>
+        <p id="lat">latitude...</p>
+        <p id="loc"></p>
+      </p>
+
+    </div>
+  </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="skycons/skycons.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
