@@ -2,7 +2,7 @@
 var bgCycle = (bgData) => {
   console.log(bgData);
   if(bgData.includes('clear')){
-    $('body').css({'background-image' : 'url("https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Wallpaper-Free-Download.jpg")'})}
+    $('body').css({'background-image' : 'url("http://cdn.wallpapersafari.com/79/1/eckb6r.jpg")'})}
   if(bgData.includes('cloudy')){
     $('body').css({'background-image' : 'url("https://skbthrive.files.wordpress.com/2015/03/bigstock-sunset-over-blurred-asphalt-ro-50182835.jpg")'})}
   if(bgData.includes('rain')){
