@@ -4,7 +4,7 @@ body {
 
 .container {
   display:flex;
-  padding-top: 15%;
+  padding-top: 10%;
   max-height: 100vh;
   width: 90%;
   flex-direction: column;
