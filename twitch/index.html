@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+
+    body {
+      background-color: rgb(130, 238, 245);
+    }
+    h1 {
+      font-size: 300%;
+      font-family: sans-serif;
+      color: rgb(119, 14, 145);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      align-items: center;
+    }
+
+    .box {
+      display: block;
+      background-color: rgb(222, 53, 53);
+      margin-top: 5px;
+      width: 55vw;
+      min-height: 130px;
+      border-radius: 5px;
+      border-style: inset;
+      border-color: rgba(0, 0, 0, 0.1);
+
+    }
+
+    .live{
+      background-color: rgb(61, 227, 104);
+      width: 60vw;
+      min-height: 170px;
+    }
+    .name{
+      font-size: 120%;
+      align-self: center;
+    }
+
+    .button {
+      background-color: rgb(100,65,165);
+      border-radius: 10px;
+      width: 70px;
+      height: 25px;
+      color: white;
+    }
+    .hidden {
+      display:none;
+    }
+
+
+    </style>
+
+    <meta charset="utf-8">
+    <title>Twitch API</title>
+  </head>
+  <body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Twitch_logo_%28wordmark_only%29.svg/2000px-Twitch_logo_%28wordmark_only%29.svg.png" alt="Twitch API" height="20%" width="60%" />
+        <div>
+          <input type="button" class="button" value="All" onclick="cycleChannels('all')">
+
+          <input type="button" class="button" value="Online" onclick="cycleChannels('online')">
+
+          <input type="button" class="button" value="Offline" onclick="cycleChannels('offline')">
+
+        </div>
+
+<!-- JS will generate from template here -->
+    </div>
+    <!-- handlebars -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js'></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- JS -->
+
+
+    <script>
+
+
+    var channels = ["cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "moonmoon_ow", "skiwithpete", "GamesDoneQuick", "ESL_CSGO"]
+
+    var template = Handlebars.compile(`
+    <div id="container-{{_id}}" class="box offline">
+    <p>
+      <a href="{{url}}" target="_blank">
+        <img src="{{logo}}" height=64px width=64px>
+        @{{name}}
+      </a>
+      <span class="name"><strong>{{display_name}}</strong></span>
+      </p>
+      <div>{{status}}</div>
+    </div>
+    `);
+    var templateLive = Handlebars.compile(`
+    <div id="container-{{stream.channel._id}}" class="box live">
+    <p>
+      <a href="{{stream.channel.url}}" target="_blank">
+        <img src="{{stream.channel.logo}}" height=64px width=64px>
+        @{{stream.channel.name}}
+      </a>
+      <span class="name"><strong>{{stream.channel.display_name}}</strong></span>
+      </p>
+      <div>{{stream.channel.status}}</div>
+      <div>{{stream.game}}</div>
+    </div>
+    `)
+
+    channels.forEach((e) =>{
+      $.ajax({
+       type: 'GET',
+
+       url: 'https://wind-bow.gomix.me/twitch-api/streams/' + e + '/',
+
+       dataType: 'jsonp',
+
+       data:{
+         format: 'json'
+       },
+
+       success: function(data) {
+         if(data.stream == null){
+           notLive(e)
+         }
+         // template for live streams
+         else if(data.stream.stream_type == 'live'){
+           console.log(data)
+           $('.container').append($(templateLive(data)))
+         }
+       },
+
+       });
+    });
+
+    var notLive = function(channel){
+      $.ajax({
+         type: 'GET',
+
+         url: 'https://wind-bow.gomix.me/twitch-api/channels/' + channel + '/',
+
+         dataType: 'jsonp',
+
+         data:{
+           format: 'json'
+         },
+
+         success: function(data) {
+           $('.container').append($(template(data)))
+         },
+
+         });
+      }
+
+    const live = document.getElementById('live');
+    const offline = document.getElementById('offline')
+
+    function cycleChannels(e){
+      if(e == "all"){
+        $('.offline').removeClass('hidden')
+        $('.live').removeClass('hidden')
+      }
+      if(e == 'online'){
+        $('.offline').addClass('hidden')
+        $('.live').removeClass('hidden')
+      }
+      if(e == 'offline'){
+        $('.offline').removeClass('hidden')
+        $('.live').addClass('hidden')
+      }
+
+    }
+
+
+
+
+    </script>
+  </body>
+</html>
