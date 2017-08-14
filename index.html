@@ -1,259 +1,119 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <a name="top"></a>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="favicon.ico">
   <meta charset="UTF-8">
-  <title>Testing All the Things!</title>
-  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
-  <script type="text/javascript" src="isMobile.js"></script>
-  <a href="1.html">BS cat photo app</a>
-  <div><a href="2.html">Compass</a></div>
-  <div><a href="RQM/index.html">Random Quote Generator</a></div>
-  <div><a href="Weather/index.html">Weather app</a></div>
-  <div><a href="wiki/index.html">Wikipedia search</a></div>
-  <div><a href="twitch/index.html">Twitch API</a></div>
+  <title>Grant G.</title>
 </head>
+
 <body>
 
-  <div class="hero">
-    <h1 contenteditable>🔥DropShadow</h1>
+  <header>
+      <h1>Grant Glidewell</h1>
+  </header>
+
+
+  <nav id="main">
+    <ul>
+      <li class="logo"><a href="#top">&lt;&nbsp;GG&nbsp;&gt;</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#proj">Projects</a></li>
+      <li><a href="#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class ="break"></div>
+  <a name="about"></a>
+  <div class="break"></div>
+
+  <div class="site-wrap">
+    <div>
+      <table align="center">
+        <tr>
+          <td>
+            <img src="http://i.imgur.com/AXnbs4G.jpg" alt="me">
+          </td>
+          <td style="padding: 10px">
+            <p><h3>Objective</h3>
+              Seeking a position as a Javascript Developer
+            </p>
+            <p><h3>Proficiencies</h3>
+              Javascript, HTML, CSS, React, rest APIs, GIT version control, JSON data structures.
+            </p>
+            <p><h3>Education</h3>
+              Front End Developer Certificate from freeCodeCamp.org
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
-  <style>
-  html {
-    color:black;
-    font-family: sans-serif;
-  }
-  body {
-    margin: 0;
-  }
-  .hero {
-    min-height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    color:black;
-  }
-  h1 {
-    text-shadow: 10px 10px 0 rgba(0,0,0,1);
-    font-size: 100px;
-  }
-  </style>
+<div class="break"></div>
+<a name="proj"></a>
+<div class="break"></div>
 
-<script type="text/javascript">
-//From git.io
+  <div class="site-wrap">
+    <div>
+      <h3>I know what Im doing, proof-</h3><br>
+      <div class="proj-container">
+      <a href="https://ggcadc.github.io/simon/" target="_blank">
+      <div class="imageOverlay">
+        <img src="simon.png" class="image" alt="image">
+        <div class="overlay">
+          <div class="text">
+            <p>HTML, CSS, Javascript</p>
+          </div>
+        </div>
+      </div></a>
+      <a href="https://calc-wkavdmryqe.now.sh/" target="_blank">
+      <div class="imageOverlay">
+        <img src="calc.png" class="image" alt="image">
+        <div class="overlay"><div class="text">
+          <p>React, HTML, CSS, Javascript</p>
+        </div>
+      </div>
+    </div></a>
+    <a href="https://tictactoe-bpmaonnnsr.now.sh/" target="_blank">
+      <div class="imageOverlay">
+        <img src="tic-tac-toe.png" class="image" alt="image">
+        <div class="overlay"><div class="text">
+          <p>React, HTML, CSS, Javascript</p>
+        </div>
+      </div>
+    </div></a>
+    <a href="https://timer-lpqvzfkovy.now.sh/" target="_blank">
+      <div class="imageOverlay">
+        <img src="timer.png" class="image" alt="image">
+        <div class="overlay"><div class="text">
+          <p>HTML, CSS, Javascript</p>
+        </div>
+      </div>
+    </div></a>
+    </div>
+  </div>
+  </div>
 
-const pressed = [];
-const secretCode = 'grant';
-window.addEventListener('keyup', (e) => {
-console.log(e.key);
-pressed.push(e.key.toLowerCase());
-pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
-if (pressed.join('').includes(secretCode)){
-	cornify_add();
-}
-console.log(pressed)
-})
-const hero = document.querySelector('.hero');
-const text = hero.querySelector('h1');
-const walk = 100;
-function shadow(e){
-	const { offsetHeight : height, offsetWidth: width } = hero;
-	let { offsetX: x, offsetY: y } = e;
-	if(this !== e.target){//fix for mouse over other element
-		x = x + e.target.offsetLeft;
-		y = y + e.target.offsetTop;
-	}
-	const xWalk = Math.round((x / width * walk) - (walk /2));
-	const yWalk = Math.round((y / width * walk) - (walk /2));
-	text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, 0.7),
-													 ${xWalk * -1}px ${yWalk}px 0 rgba(0, 255, 255, 0.7)`;
-}
+<div class="break"></div>
+<a name="contacts"></a>
+<div class="break"></div>
 
-const randomDistance = (Math.round(Math.random() * 100) + 50);
+  <div class="site-wrap">
+    <div align="center"><h3>you like me and want to hire me-</h3></div>
+    <div class="contact">
 
-window.ondevicemotion = (e) => {
-		// console.log(e);
-		const {
-			offsetHeight: height,
-			offsetWidth: width
-		} = hero;
-		var x = (e.accelerationIncludingGravity.x) * randomDistance;
-		var y = (e.accelerationIncludingGravity.y) * randomDistance;
-		const xWalk = Math.round((x / width * walk) - (walk / 2));
-		const yWalk = Math.round((y / width * walk) - (walk / 2));
-		text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(255, 0, 255, 0.7),
-													 ${xWalk * -1}px ${yWalk}px 0 rgba(0, 255, 255, 0.7)`;
-	}
-hero.addEventListener('mousemove', shadow);
+    <div id="email"><a href="mailto:ggcadc@gmail.com" subject="I like your stuff"><h3>ggcadc@gmail.com</h3></a></div>
+    <div id="github"><a href="https://github.com/ggcadc"><h3>Github</h3></a></div>
+    <div id="phone"><h3>858.414.3321</h3></div>
+    </div>
+  </div>
 
-//end gitio script
+  <div class="break"></div>
+  <div class="break"></div>
 
+<script src="./index.js" type="text/javascript"></script>
+</body>
 
-// let countDownFrom = (num) => {
-// 	if (num == 0) return;
-// 	console.log(num);
-// 	countDownFrom(num - 1)
-//
-// }
-// countDownFrom(10)
-
-var animals = [
-	{name: 'fluffy', species: 'rabbit'},
-	{name: 'goddy', species:'dog'},
-	{name: 'larayne', species: 'cat'},
-	{name: 'tamara', species:'cat'},
-	{name: 'will', species:'dog'},
-	{name: 'john', species: 'rabbit'},
-	{name: 'drumph', species: 'rabbit'},
-	{name: 'mane', species:'dog'},
-	{name: 'matt', species: 'cat'},
-	{name: 'andrew', species:'cat'},
-	{name: 'kyla', species:'dog'},
-	{name: 'nate', species: 'rabbit'}
-]
-
-//using filter function
-/*
-var isDog = function(animal){
-	return animal.species === 'dog'
-}
-var isNotDog = function(animal){
-	return animal.species !== 'dog'
-}
-var dogs = animals.filter(isDog)
-var notDogs = animals.filter(isNotDog)
-
-console.log(dogs)
-console.table(notDogs)
-*/
-
-// var rebbits = animals.filter(function(animal) {
-// 	return animal.species === 'rabbit';
-// })
-
-//Using for loop vs map function
-// var names = []
-// for (var i = 0; i < animals.length; i++){
-// 	names.push(animals[i].name);
-// }
-// console.log(names);
-
-// var names = animals.map(function(animals){
-// 	return animals.name + ' is a ' + animals.species
-// })
-// console.log(names);
-
-//es6
-// var names =animals.map((x) => x.name);
-// console.log(names);
-
-var orders = [
-	{ amount : 250 },
-	{ amount : 400 },
-	{ amount : 100 },
-	{ amount : 325 },
-	{ amount : 200 }
-]
-
-// var totalAmount = orders.reduce((sum, order) => sum + order.amount, 0)
-
-// var totalAmount = orders.reduce(function(sum, order) {
-// 	console.log('hello', sum, order)//how this works
-// 	return sum + order.amount
-// }, 0)
-
-// var totalAmount = 0
-// for (var i = 0; i < orders.length; i++){
-// 	totalAmount += orders[i].amount
-// }
-
-// console.log(totalAmount)
-
-//scope and closure
-// var me = 'Grant';
-// function sayHi(){
-// 	console.log('hello ' +me+ '!');
-// }
-// me = 'other'
-// sayHi()
-
-//currying
-//this is non currying
-// let dragon = (name, size, element) =>
-	// name + ' is a ' +
-	// size + ' dragon that breathes ' +
-	// element + '!'
-//console.log(dragon('fluffy', 'tiny', 'water'))
-
-// this is currying es6
-// let dragon =
-// 	name =>
-// 		size =>
-// 			element =>
-// 				name + ' is a ' +
-// 				size + ' dragon that breathes ' +
-// 				element + '!'
-// console.log(dragon('fluffy')('tiny')('water'))
-
-//converted to js5 through babel
-// var dragon = function dragon(name) {
-// 	return function (size) {
-// 		return function (element) {
-// 			return name + ' is a ' + size + ' dragon that breathes ' + element + '!';
-// 		};
-// 	};
-// };
-// console.log(dragon('fluffy')('tiny')('water'));
-
-//EloquentJS exercise
-// function range(a, b){
-// 	var numbers = [];
-// 	if(a < b){
-// 		for(var i = a; i <= b; i++)
-// 		numbers.push(i);
-// 	}else{
-// 		for(var i = b; i <= a; i++)
-// 		numbers.push(i);
-// 		numbers.reverse();
-// 		};
-// 	return(numbers);
-// 	}
-
-// function range(a, b, c){
-// 	var numbers = [];
-// 	if (typeof c === 'undefined'){c = 1}
-// 		if(a < b){
-// 			for(var i = a; i <= b; i += c)
-// 			numbers.push(i);
-// 		}else{
-// 			for(var i = b; i <= a; i += c)
-// 			numbers.push(i);
-// 			numbers.reverse();
-// 	};
-// 		return(numbers);
-// }
-
-// function reverseArray(array){
-//   	newArray = []
-// 	for(i = array.length - 1; i >= 0; i--){
-//       newArray.push(array.pop())
-//     }
-//   return newArray
-// }
-// function reverseArrayInPlace (array) {
-//   var i = 0;
-//       n = array.length;
-//       middle = Math.floor(n / 2);
-//       temp = null;
-//
-//   for (; i < middle; i += 1) {
-//      temp = array[i];
-//      array[i] = array[n - 1 - i];
-//      array[n - 1 - i] = temp;
-//   }
-// }
-
-
-
-
-</script>
+</html>
