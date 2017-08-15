@@ -18,9 +18,7 @@ function fixNav() {
 }
 
 const highlightActive = (item) => {
-  about.style = 'color: white';
-  project.style = 'color: white';
-  contact.style = 'color: white';
+  clearActive();
   return item.style = 'color: rgb(150, 4, 4)';
 }
 
