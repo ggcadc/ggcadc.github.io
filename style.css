@@ -205,6 +205,11 @@ nav a:visited {
   box-shadow: -4px 4px 7px 0 rgba(0,0,0,.3), 0 6px 20px 0 rgba(0,0,0,.19);
 }
 
+#pic {
+  box-shadow: -4px 4px 7px 0 rgba(0,0,0,.3), 0 6px 20px 0 rgba(0,0,0,.19);
+
+}
+
 .overlay {
   position: absolute;
   margin: 5px;
