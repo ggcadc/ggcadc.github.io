@@ -151,20 +151,20 @@ a:visited {
   display:flex;
   max-width: 80vw;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   justify-content: space-around;
 }
 
 .imageOverlay {
   position: relative;
-  width: 230px;
+  width: 160px;
 }
 
 .image {
   margin: 5px;
   object-fit: cover;
-  width:230px;
-  height:230px;
+  width:160px;
+  height:160px;
 }
 
 .overlay {
@@ -174,7 +174,7 @@ a:visited {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 230px;
+  width: 160px;
   opacity: 0;
   transition: .5s;
   background-color: #555555;
