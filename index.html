@@ -17,19 +17,19 @@
 
   <nav id="main">
     <ul>
-      <li class="logo"><a href="#top">&lt;&nbsp;GG&nbsp;&gt;</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#proj">Projects</a></li>
-      <li><a href="#contacts">Contact</a></li>
+      <li class="logo"><a href="#top" onclick="clearActive()">&lt;&nbsp;GG&nbsp;&gt;</a></li>
+      <li><a href="#aboutme" onclick="highlightActive(about)" id="about">About</a></li>
+      <li><a href="#proj" onclick="highlightActive(projects)" id="projects">Projects</a></li>
+      <li><a href="#contacts" onclick="highlightActive(contact)" id="contact">Contact</a></li>
     </ul>
   </nav>
 
   <div class="break"></div>
   <div class="break"></div>
-  <a name="about"></a>
+  <a name="aboutme"></a>
   <div class="break"></div>
 
-  <div class="site-wrap">
+  <div class="card">
     <div>
       <table align="center">
         <tr>
@@ -57,7 +57,7 @@
   <a name="proj"></a>
   <div class="break"></div>
 
-  <div class="site-wrap">
+  <div class="card">
     <div>
       <h3>I know some things, proof-</h3><br>
       <div class="proj-container">
@@ -125,7 +125,7 @@
   <a name="contacts"></a>
   <div class="break"></div>
 
-  <div class="site-wrap">
+  <div class="card">
     <div align="center">
       <h3>you like me and want to hire me-</h3></div>
     <div class="contact">
