@@ -12,29 +12,15 @@ body {
   background: rgba(91, 91, 91, 1) 100%;
 }
 
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
 .card {
   max-width: 60vw;
   margin: 60px auto;
-  background: rgb(223, 223, 223);
+  background: rgb(199, 199, 199);
   padding: 60px;
   text-align: justify;
   -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  transform: scale(0.98);
   box-shadow: 7px 6px 14px 0 rgba(0,0,0,.3), 0 6px 20px 0 rgba(0,0,0,.19)
-}
-
-.fixed-nav .site-wrap {
-  -webkit-transform: scale(1);
-          transform: scale(1);
 }
 
 header {

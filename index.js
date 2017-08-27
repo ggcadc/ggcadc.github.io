@@ -17,7 +17,7 @@ function fixNav() {
   }
 }
 
-const highlightActive = (item) => {
+function highlightActive(item){
   clearActive();
   return item.style = 'color: rgb(150, 4, 4)';
 }
@@ -27,6 +27,5 @@ const clearActive = () => {
   project.style = 'color: white';
   contact.style = 'color: white';
 }
-
 
 window.addEventListener("scroll", fixNav);
