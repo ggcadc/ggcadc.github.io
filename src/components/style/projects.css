@@ -1,0 +1,14 @@
+.projectBox{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    min-width: 100vw;
+}
+.project{
+    width: 45vw;
+    align-self: center;
+    background-color: #7CC3DF;
+    border: 5px solid black;
+}
