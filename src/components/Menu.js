@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
@@ -23,9 +24,9 @@ const style = {
         anchorOrigin={{horizontal: 'right', vertical: 'top'}}
         targetOrigin={{horizontal: 'right', vertical: 'top'}}
       >
-        <MenuItem primaryText="About" key="1" />
-        <MenuItem primaryText="Projects" key="2" />
-        <MenuItem primaryText="Contact" key="3" />
+      <Link to="/"><MenuItem primaryText="About" key="1" /></Link>
+      <Link to="/projects"><MenuItem primaryText="Projects" key="2" /></Link>
+      <Link to="/contact"><MenuItem primaryText="Contact" key="3" /></Link>
       </IconMenu>
     </div>
   );
