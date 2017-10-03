@@ -26,10 +26,12 @@ class contact extends Component {
         return (
             <div>
                 {this.state.loading?<h1>Loading</h1>:
-                <div>
-                    <h2>Email:</h2><p>{this.state.information.email}</p>
+                <div className="widthLimit">
+                    <div>
+                    <h2>Email:</h2><a href={`mailto:${this.state.information.email}`} target="_blank">{this.state.information.email}</a>
                     <h2>Phone:</h2><p>{this.state.information.phone}</p>
-                    <h2>Github:</h2><p>{this.state.information.github}</p>
+                    <h2>Github:</h2><a href={this.state.information.github} target="_blank">{this.state.information.github}</a>
+                    </div>
                 </div>
                 }
             </div>
